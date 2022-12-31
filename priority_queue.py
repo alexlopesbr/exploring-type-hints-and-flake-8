@@ -1,13 +1,10 @@
 from base_queue import BaseQueue
 
+
 class PriorityQueue(BaseQueue):
     def key_generate(self) -> None:
         self.actual_key = f'PQ-{self.code}'
 
-    def update_queue(self) -> None:
-        self.reset_queue()
-        self.key_generate()
-        self.queue.append(self.actual_key)
     def call_client(self, ticket_window:int) -> str:
         actual_customer:str = self.queue.pop(0)
         self.customers_served.append(actual_customer)

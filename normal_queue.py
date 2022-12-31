@@ -1,14 +1,9 @@
-from priority_queue import BaseQueue
+from base_queue import BaseQueue
 
 
 class NormalQueue(BaseQueue):
     def key_generate(self) -> None:
         self.actual_key = f'NQ-{self.code}'
-
-    def update_queue(self) -> None:
-        self.reset_queue()
-        self.key_generate()
-        self.queue.append(self.actual_key)
 
     def call_client(self, ticket_window:int) -> str:
         actual_customer:str = self.queue.pop(0)
