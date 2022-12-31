@@ -17,4 +17,4 @@ priority_queue.update_queue()
 priority_queue.update_queue()
 
 print(priority_queue.call_client(9))
-print(priority_queue.statistics('2022-12-31', 44, 'detailed2'))
+print(priority_queue.statistics('2022-12-31', 44, 'detailed'))
