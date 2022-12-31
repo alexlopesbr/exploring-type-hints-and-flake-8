@@ -8,7 +8,6 @@ class PriorityQueue(BaseQueue):
         self.reset_queue()
         self.key_generate()
         self.queue.append(self.actual_key)
-
     def call_client(self, ticket_window:int) -> str:
         actual_customer:str = self.queue.pop(0)
         self.customers_served.append(actual_customer)
