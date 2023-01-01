@@ -1,5 +1,8 @@
 import abc
 
+from constants import MAX_QUEUE_SIZE
+
+
 class BaseQueue(metaclass=abc.ABCMeta):
     code:int = 0
     queue:list = []
@@ -7,7 +10,7 @@ class BaseQueue(metaclass=abc.ABCMeta):
     actual_key:str = ''
 
     def reset_queue(self) -> None:
-        self.code += 1 if self.code < 100 else 0
+        self.code += 1 if self.code < MAX_QUEUE_SIZE else 0
 
     def insert_customer(self) -> None:
         self.queue.append(self.actual_key)

@@ -1,9 +1,10 @@
 from base_queue import BaseQueue
+from constants import PRIORITY_QUEUE_CODE
 
 
 class PriorityQueue(BaseQueue):
     def key_generate(self) -> None:
-        self.actual_key = f'PQ-{self.code}'
+        self.actual_key = f'{PRIORITY_QUEUE_CODE}-{self.code}'
 
     def call_client(self, ticket_window:int) -> str:
         actual_customer:str = self.queue.pop(0)
