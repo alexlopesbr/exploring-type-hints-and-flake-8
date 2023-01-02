@@ -12,4 +12,4 @@ priority_queue.update_queue()
 print(priority_queue.call_client(1))
 
 normal_queue = FactoryQueue.get_queue(PRIORITY_QUEUE_TYPE)
-print(normal_queue.statistics(120, '01/01/23', ResumedStatistics))
+print(normal_queue.statistics(ResumedStatistics(120, '01/01/23')))
