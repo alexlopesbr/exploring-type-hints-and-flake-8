@@ -1,3 +1,5 @@
+from typing import Dict, Union, List
+
 from base_queue import BaseQueue
 from constants import PRIORITY_QUEUE_CODE
 
@@ -12,10 +14,11 @@ class PriorityQueue(BaseQueue):
         return f'Cliente atual: {actual_customer} dirija-se ao caixa {ticket_window}'
 
     def statistics(self, day:str, agency:int, flag:str) -> dict:
+        estatistic:Dict[str, Union[List[str], str, int]] = {}
+
         if flag != 'detailed':
-            estatistic = {f'{agency}-{day}': len(self.customers_served)}
+            estatistic[f'{agency}-{day}'] = len(self.customers_served)
         else:
-            estatistic = {}
             estatistic['day'] = day
             estatistic['agency'] = agency
             estatistic['customers_served'] = self.customers_served

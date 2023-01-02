@@ -1,12 +1,13 @@
 import abc
+from typing import List
 
 from constants import MAX_QUEUE_SIZE
 
 
 class BaseQueue(metaclass=abc.ABCMeta):
     code:int = 0
-    queue:list = []
-    customers_served:list = []
+    queue:List[str] = []
+    customers_served:List[str] = []
     actual_key:str = ''
 
     def reset_queue(self) -> None:
